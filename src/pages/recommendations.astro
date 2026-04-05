@@ -29,9 +29,10 @@ import quotes from '../content/recommendations/quotes.json';
         <ul class="rec-list">
           {books.map((b) => (
             <li>
-              <span class="rec-title">{b.title}</span>
+              <a href={b.link} target="_blank" rel="noopener noreferrer" class="rec-title">{b.title}</a>
               <span class="rec-meta">{b.author}</span>
               {b.status === 'read' && <span class="status-done">read</span>}
+              {b.status === 'reading' && <span class="status-reading">reading</span>}
             </li>
           ))}
         </ul>
@@ -106,6 +107,12 @@ import quotes from '../content/recommendations/quotes.json';
   .status-done {
     font-size: 0.75rem;
     color: #3a7d44;
+    margin-left: auto;
+  }
+
+  .status-reading {
+    font-size: 0.75rem;
+    color: #b08520;
     margin-left: auto;
   }
 </style>

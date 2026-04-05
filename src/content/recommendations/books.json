@@ -1,16 +1,50 @@
 [
   {
-    "title": "The Alignment Problem",
-    "author": "Brian Christian",
+    "title": "Siddhartha",
+    "author": "Hermann Hesse",
     "status": "read",
-    "rating": 5,
-    "comment": "A must-read for understanding AI safety."
+    "link": "https://www.fnac.com/a978092/Hermann-Hesse-Siddhartha"
   },
   {
-    "title": "Superintelligence",
-    "author": "Nick Bostrom",
-    "status": "to-read",
-    "rating": null,
-    "comment": null
+    "title": "Le Comte de Monte-Cristo",
+    "author": "Alexandre Dumas",
+    "status": "read",
+    "link": "https://www.fnac.com/a2811038/Alexandre-Dumas-Pere-Le-comte-de-Monte-Cristo"
+  },
+  {
+    "title": "L'Écume des jours",
+    "author": "Boris Vian",
+    "status": "read",
+    "link": "https://www.fnac.com/a258354/Boris-Vian-L-ecume-des-jours"
+  },
+  {
+    "title": "La Vie devant soi",
+    "author": "Romain Gary",
+    "status": "read",
+    "link": "https://www.fnac.com/a167545/Romain-Gary-La-vie-devant-soi"
+  },
+  {
+    "title": "L'Enchanteur",
+    "author": "René Barjavel",
+    "status": "read",
+    "link": "https://www.fnac.com/a113201/Rene-Barjavel-L-Enchanteur"
+  },
+  {
+    "title": "La Horde du Contrevent",
+    "author": "Alain Damasio",
+    "status": "read",
+    "link": "https://www.fnac.com/a8080378/Alain-Damasio-La-Horde-du-Contrevent"
+  },
+  {
+    "title": "Au bonheur des ogres",
+    "author": "Daniel Pennac",
+    "status": "reading",
+    "link": "https://www.fnac.com/a8317/Daniel-Pennac-Au-bonheur-des-ogres"
+  },
+  {
+    "title": "L'Usage du monde",
+    "author": "Nicolas Bouvier",
+    "status": "reading",
+    "link": "https://www.fnac.com/a1178672/Nicolas-Bouvier-L-usage-du-monde"
   }
 ]
