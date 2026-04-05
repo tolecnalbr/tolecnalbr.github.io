@@ -5,7 +5,7 @@ date: 2026-04-05T18:00:00
 tags: ["ai", "building"]
 ---
 
-This is not a tutorial. It's an invitation to try.
+Before this afternoon, I knew absolutely nothing about how to build a website. This is not a tutorial. It's an invitation to try.
 
 ## It started with a video
 
@@ -24,8 +24,6 @@ For those who want the short version:
 Tech-wise, Claude suggested [Astro](https://astro.build/) as a framework and [GitHub Pages](https://pages.github.com/) for hosting. Both free. I didn't know what either of those were before today.
 
 That's it. The rest is a conversation.
-
-![Building the website with Claude Code in VS Code](/Website/blog-screenshot.png)
 
 ## What surprised me
 
