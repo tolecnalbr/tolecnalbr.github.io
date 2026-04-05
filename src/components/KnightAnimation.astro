@@ -193,16 +193,16 @@ const farmerSrc = `${import.meta.env.BASE_URL}knight-placeholder.svg`;
     transform: none;
   }
 
-  /* === FACING USER (front-on, squished to suggest facing camera) === */
-  .farmer.facing {
+  /* === LOOKING LEFT (back to original profile) === */
+  .farmer.looking-left {
     animation: none;
     right: auto;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%) scaleX(0.7);
+    transform: translateX(-50%) translateY(-50%);
   }
 
-  .farmer.facing .leg-left,
-  .farmer.facing .leg-right {
+  .farmer.looking-left .leg-left,
+  .farmer.looking-left .leg-right {
     animation: none;
     transform: none;
   }
@@ -222,15 +222,15 @@ const farmerSrc = `${import.meta.env.BASE_URL}knight-placeholder.svg`;
 
   @keyframes jump {
     0% {
-      transform: translateX(-50%) translateY(-50%) scaleX(0.7);
+      transform: translateX(-50%) translateY(-50%);
       opacity: 1;
     }
     25% {
-      transform: translateX(-50%) translateY(calc(-50% - 100px)) scaleX(0.7);
+      transform: translateX(-50%) translateY(calc(-50% - 100px));
       opacity: 1;
     }
     100% {
-      transform: translateX(-50%) translateY(100vh) scaleX(0.7);
+      transform: translateX(-50%) translateY(100vh);
       opacity: 0;
     }
   }
@@ -258,23 +258,23 @@ const farmerSrc = `${import.meta.env.BASE_URL}knight-placeholder.svg`;
       farmer.classList.add('looking-right');
     }, 3900);
 
-    // Step 4: Turn to face the user (front-on)
+    // Step 4: Look back left
     setTimeout(() => {
       farmer.classList.remove('looking-right');
-      farmer.classList.add('facing');
+      farmer.classList.add('looking-left');
     }, 4500);
 
     // Step 5: Jump up and fall off screen
     setTimeout(() => {
-      farmer.classList.remove('facing');
+      farmer.classList.remove('looking-left');
       farmer.classList.add('jumping');
-    }, 5200);
+    }, 5100);
 
     // Step 6: Fade out intro
-    setTimeout(() => intro.classList.add('fade-out'), 5700);
+    setTimeout(() => intro.classList.add('fade-out'), 5600);
 
     // Step 7: Remove from DOM
-    setTimeout(() => intro.remove(), 6300);
+    setTimeout(() => intro.remove(), 6200);
 
   } else if (intro) {
     intro.remove();
