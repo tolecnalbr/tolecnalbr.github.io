@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Blog — Lancelot" description="Lancelot's AI learning blog posts">
+  <main class="container">
+    <header class="page-header">
+      <h1>Blog</h1>
+      <p>My AI learning journey, one post at a time.</p>
+    </header>
+    <section>
+      {posts.map(post => (
+        <BlogPostCard
+          title={post.data.title}
+          description={post.data.description}
+          date={post.data.date}
+          slug={post.id}
+        />
+      ))}
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: 3rem 0 2rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    color: var(--color-text-light);
+  }
+</style>

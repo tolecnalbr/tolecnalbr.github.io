@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const formattedDate = post.data.date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={`${post.data.title} — Lancelot`} description={post.data.description}>
+  <main class="container">
+    <article class="blog-post">
+      <header>
+        <time datetime={post.data.date.toISOString()}>{formattedDate}</time>
+        <h1>{post.data.title}</h1>
+      </header>
+      <div class="prose">
+        <Content />
+      </div>
+      <footer>
+        <a href="/blog">&larr; Back to blog</a>
+      </footer>
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  .blog-post header {
+    padding: 3rem 0 2rem;
+  }
+
+  .blog-post time {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+
+  .blog-post h1 {
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .prose {
+    padding-bottom: 2rem;
+  }
+
+  .prose :global(h2) {
+    font-size: 1.4rem;
+    margin: 2rem 0 0.75rem;
+  }
+
+  .prose :global(p) {
+    margin-bottom: 1.25rem;
+  }
+
+  .prose :global(code) {
+    background: #f0f0f0;
+    padding: 0.15em 0.35em;
+    border-radius: 3px;
+    font-size: 0.9em;
+  }
+
+  .prose :global(pre) {
+    background: #1a1a1a;
+    color: #fafafa;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-bottom: 1.25rem;
+  }
+
+  footer {
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  footer a {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+  }
+</style>
