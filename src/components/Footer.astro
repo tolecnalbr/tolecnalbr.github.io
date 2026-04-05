@@ -1,0 +1,45 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="footer-inner container">
+    <div class="social-links">
+      <!-- Update these hrefs with actual social links -->
+      <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+    </div>
+    <p>&copy; {year} Lancelot</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--color-border);
+    padding: 2rem 0;
+    margin-top: 4rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-links a {
+    color: var(--color-text-light);
+    text-decoration: none;
+  }
+
+  .social-links a:hover {
+    color: var(--color-text);
+  }
+</style>
