@@ -16,7 +16,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
       <p>
         If you're curious about AI too, I hope you'll find something useful here.
+        The best way to reach me is by
+        <a href="mailto:lancelot.brun@gmail.com">email</a> or
+        <a href="https://www.linkedin.com/in/lancelotbrun/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
       </p>
+
+      <section class="interests">
+        <h2>Things I want to learn</h2>
+        <ul>
+          <li>History</li>
+          <li>Learning the guitar</li>
+          <li>Being able to recognize birds</li>
+          <li>Cultivating my own vegetables</li>
+        </ul>
+      </section>
     </article>
   </main>
 </BaseLayout>
@@ -34,5 +47,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .page-content p {
     margin-bottom: 1.25rem;
     color: var(--color-text);
+  }
+
+  .interests {
+    margin-top: 2.5rem;
+  }
+
+  .interests h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .interests ul {
+    list-style: none;
+  }
+
+  .interests li {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.95rem;
+    color: var(--color-text-light);
   }
 </style>
