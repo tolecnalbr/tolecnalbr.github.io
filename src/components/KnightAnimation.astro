@@ -179,12 +179,26 @@ const farmerSrc = `${import.meta.env.BASE_URL}knight-placeholder.svg`;
     transform: none;
   }
 
-  /* === FACING USER === */
-  .farmer.facing {
+  /* === LOOKING RIGHT (flipped profile) === */
+  .farmer.looking-right {
     animation: none;
     right: auto;
     left: 50%;
     transform: translateX(-50%) translateY(-50%) scaleX(-1);
+  }
+
+  .farmer.looking-right .leg-left,
+  .farmer.looking-right .leg-right {
+    animation: none;
+    transform: none;
+  }
+
+  /* === FACING USER (front-on, squished to suggest facing camera) === */
+  .farmer.facing {
+    animation: none;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scaleX(0.7);
   }
 
   .farmer.facing .leg-left,
@@ -208,15 +222,15 @@ const farmerSrc = `${import.meta.env.BASE_URL}knight-placeholder.svg`;
 
   @keyframes jump {
     0% {
-      transform: translateX(-50%) translateY(-50%) scaleX(-1);
+      transform: translateX(-50%) translateY(-50%) scaleX(0.7);
       opacity: 1;
     }
     25% {
-      transform: translateX(-50%) translateY(calc(-50% - 100px)) scaleX(-1);
+      transform: translateX(-50%) translateY(calc(-50% - 100px)) scaleX(0.7);
       opacity: 1;
     }
     100% {
-      transform: translateX(-50%) translateY(100vh) scaleX(-1);
+      transform: translateX(-50%) translateY(100vh) scaleX(0.7);
       opacity: 0;
     }
   }
@@ -229,32 +243,38 @@ const farmerSrc = `${import.meta.env.BASE_URL}knight-placeholder.svg`;
   if (farmer && intro && !sessionStorage.getItem('knight-intro-seen')) {
     sessionStorage.setItem('knight-intro-seen', 'true');
 
-    // Step 1: Walk in from right
+    // Step 1: Walk in from right (profile facing left)
     setTimeout(() => farmer.classList.add('walking'), 300);
 
-    // Step 2: Arrive at center, stop
+    // Step 2: Arrive at center, stop (still facing left)
     setTimeout(() => {
       farmer.classList.remove('walking');
       farmer.classList.add('at-center');
     }, 3300);
 
-    // Step 3: Turn to face the user
+    // Step 3: Look right (flip profile)
     setTimeout(() => {
       farmer.classList.remove('at-center');
-      farmer.classList.add('facing');
-    }, 4000);
+      farmer.classList.add('looking-right');
+    }, 3900);
 
-    // Step 4: Jump up and fall off screen
+    // Step 4: Turn to face the user (front-on)
+    setTimeout(() => {
+      farmer.classList.remove('looking-right');
+      farmer.classList.add('facing');
+    }, 4500);
+
+    // Step 5: Jump up and fall off screen
     setTimeout(() => {
       farmer.classList.remove('facing');
       farmer.classList.add('jumping');
-    }, 4800);
+    }, 5200);
 
-    // Step 5: Fade out intro
-    setTimeout(() => intro.classList.add('fade-out'), 5300);
+    // Step 6: Fade out intro
+    setTimeout(() => intro.classList.add('fade-out'), 5700);
 
-    // Step 6: Remove from DOM
-    setTimeout(() => intro.remove(), 5900);
+    // Step 7: Remove from DOM
+    setTimeout(() => intro.remove(), 6300);
 
   } else if (intro) {
     intro.remove();
