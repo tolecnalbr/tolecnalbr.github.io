@@ -13,6 +13,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p>
         This website is where I document everything I learn along the way.
         Think of it as a public notebook: sometimes messy, always honest.
+        Beyond AI, I also share more general thoughts, interests, and things I find along the road.
       </p>
       <p>
         If you're curious about AI too, I hope you'll find something useful here.
@@ -23,6 +24,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <section class="interests">
         <h2>Things I want to learn</h2>
+        <p class="interests-note">If you know anything about these topics or have recommendations, I'd love to <a href="mailto:lancelot.brun@gmail.com">hear from you</a>.</p>
         <ul>
           <li>History</li>
           <li>Learning the guitar</li>
@@ -55,6 +57,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .interests h2 {
     font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .interests-note {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
     margin-bottom: 0.75rem;
   }
 
