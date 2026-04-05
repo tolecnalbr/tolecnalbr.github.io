@@ -1,7 +1,7 @@
 ---
 title: "Hello World"
 description: "The first post on my AI learning blog. Here we go!"
-date: 2026-04-05
+date: 2026-04-05T10:00:00
 tags: ["intro"]
 ---
 

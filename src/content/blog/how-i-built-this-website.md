@@ -1,90 +1,39 @@
 ---
 title: "How I built this website in one afternoon"
-description: "No coding experience, no web design skills - just me and an AI building a website from scratch."
-date: 2026-04-05
-tags: ["ai", "building", "claude"]
+description: "No coding experience, no web design skills - just me and an AI."
+date: 2026-04-05T18:00:00
+tags: ["ai", "building"]
 ---
 
-I have zero experience in coding. Zero in web design. I've never touched HTML, CSS, or any of that. And yet, you're reading this on a website I built this afternoon.
-
-Here's how it happened.
+This is not a tutorial. It's an invitation to try.
 
 ## It started with a video
 
-This morning I watched [this video by Cole Medin](https://www.youtube.com/watch?v=B6k_vAjndMo). It's about n8n and AI workflows, but honestly, the part that stuck with me was the first few minutes - how to set up Claude Code. It looked stupidly simple. Download, install, done.
+I watched [this video by Cole Medin](https://www.youtube.com/watch?v=B6k_vAjndMo) about AI workflows. The part that got me was the first few minutes - setting up Claude Code. It took about two minutes. Then I thought: what if I just ask it to build me a website?
 
-So I did that. And then I thought - what if I just... ask it to build me a website?
+## How I actually built it
 
-## The conversation
+For those who want the short version:
 
-That's literally what I did. I opened Claude Code and said something like "help me build a personal website." No grand plan, no wireframes, no technical specs. Just a vague idea: I want a simple site where I can write about what I'm learning.
+1. Install [Claude Code](https://claude.ai/code)
+2. Open it and describe what you want
+3. Let it ask you questions, answer them honestly
+4. Iterate - say what you like, what you don't
 
-What happened next surprised me. Claude didn't just start writing code. It asked me questions. One at a time, like a conversation:
+Tech-wise, Claude suggested [Astro](https://astro.build/) as a framework and [GitHub Pages](https://pages.github.com/) for hosting. Both free. I didn't know what either of those were before today.
 
-- What do you want to call the site?
-- What pages do you need?
-- Do you have design inspiration?
-- Light or dark theme?
-- What tech should we use?
+That's it. The rest is a conversation.
 
-I shared a couple of websites I liked - [arvid.xyz](https://arvid.xyz/) for the minimal structure, and [lovefrom.com](https://www.lovefrom.com/) for the intro animation. I told it I wanted something clean, simple, personal.
+## What surprised me
 
-## The build
+**It asked me what I actually needed.** I came in thinking I needed a CMS (a tool to manage content). Claude walked me through why I didn't - I'm one person writing a blog, a simple text file is enough. It saved me from building something unnecessarily complex.
 
-Claude suggested Astro - a framework I'd never heard of. It explained why it was a good fit (simple, fast, good for blogs), and I trusted it. From there, it broke the whole project into 9 tasks and started working through them one by one:
+**It explained everything.** Not in a condescending way, but in a "here are your options, here's what I'd recommend and why" way. I felt like I was making informed decisions, not blindly following instructions.
 
-1. Set up the project
-2. Create the base styles and layout
-3. Build the navigation and footer
-4. Create the intro animation (more on that below)
-5. Set up the blog system
-6. Build the About page
-7. Build the Questions page
-8. Add SEO basics
-9. Deploy to GitHub Pages
+**It generated an animation from scratch.** I described a character - a farmer with a hay hat, blue overalls, a straw in his mouth, holding a pitchfork - and it drew it in pixel art and animated it walking across the screen. Just from a description. That blew my mind.
 
-Each task took a few minutes. I could see the progress in real time. When something didn't look right, I'd just say "change this" or "I don't like that" and it would fix it immediately.
+**I understand websites now.** Not in a "I can code one from scratch" way. But I understand what files do what, how pages are structured, how deployment works, how a blog post goes from a text file to a live page. I went from zero to genuinely understanding the mechanics in an afternoon.
 
-## The farmer
+## The point
 
-The best part was the intro animation. I wanted a character that walks across the screen when you first visit the site. We went through several iterations:
-
-- First it was a knight (because, you know, Lancelot)
-- Then I changed my mind and asked for a farmer with a hay hat, blue overalls, and a straw in his mouth
-- At first the character looked weird because it was drawn front-facing but walking sideways
-- We fixed that by redrawing it as a side profile
-- The pickaxe didn't look right, so we changed it to a pitchfork
-- We tweaked the animation: walk in, look right, look left, jump off screen
-
-Each change was a quick back-and-forth. I'd describe what I wanted, Claude would implement it, I'd look at it and give feedback. Like working with a very patient designer who never gets tired.
-
-## The details
-
-Once the main structure was in place, we refined everything:
-
-- Switched the font to Outfit (lighter and more modern)
-- Added a yellow highlighter effect on my name
-- Made the navbar subtler with a light background instead of a hard line
-- Set up a recommendations page for books and quotes
-- Added an interests section to the About page
-- Connected everything to GitHub so it deploys automatically when I make changes
-
-## What I actually learned
-
-The honest truth is - I didn't learn how to code today. I don't know what half the files in this project do. But I learned something maybe more useful: how to collaborate with AI.
-
-It's not about giving perfect instructions. It's about having a conversation. You describe what you want, the AI builds it, you react, it adjusts. The whole afternoon felt less like "programming" and more like "directing."
-
-A few things that worked well:
-- **Being specific about what I didn't like** was more useful than trying to describe what I wanted
-- **Sharing visual references** (like the websites I liked) gave Claude way more context than words alone
-- **Starting simple and iterating** was better than trying to plan everything upfront
-- **Not pretending to know things I didn't** - when I didn't understand something, I just asked
-
-## What's next
-
-This is day one. The site is live, the blog works, and I can add new posts by creating a simple text file. I want to keep sharing what I learn about AI, but also other things - books I read, ideas I have, random thoughts.
-
-If you have any recommendations on the topics I'm exploring, or just want to say hi - reach out by [email](mailto:lancelot.brun@gmail.com) or [LinkedIn](https://www.linkedin.com/in/lancelotbrun/).
-
-This whole thing took one afternoon. No experience required. Just curiosity and a good conversation partner.
+This post isn't about the specific tools I used. It's about the fact that the barrier to building things has completely changed. If you've ever wanted to make something on the internet and thought "I don't know how" - you probably can now. You just need to start a conversation.
