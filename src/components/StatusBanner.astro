@@ -1,0 +1,49 @@
+---
+// Status: "alive" | "missing" | "dead"
+const status = "alive";
+
+const statusConfig = {
+  alive: { label: "lancelot is alive", dot: "#3a7d44", bg: "rgba(58, 125, 68, 0.08)", bgHover: "rgba(58, 125, 68, 0.14)" },
+  missing: { label: "haven't heard from him in a few days, anyone?", dot: "#c48820", bg: "rgba(196, 136, 32, 0.08)", bgHover: "rgba(196, 136, 32, 0.14)" },
+  dead: { label: "he's gone. rip.", dot: "#c44040", bg: "rgba(196, 64, 64, 0.08)", bgHover: "rgba(196, 64, 64, 0.14)" },
+};
+
+const current = statusConfig[status];
+---
+
+<div class="status-banner" style={`--dot-color: ${current.dot}; --bg-color: ${current.bg}; --bg-hover: ${current.bgHover}`}>
+  <span class="status-dot"></span>
+  <span class="status-label">{current.label}</span>
+</div>
+
+<style>
+  .status-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    background-color: var(--bg-color);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    cursor: default;
+    transition: background-color 0.2s;
+    margin: 1.5rem auto 0;
+  }
+
+  .status-banner:hover {
+    background-color: var(--bg-hover);
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--dot-color);
+    flex-shrink: 0;
+  }
+
+  .status-label {
+    line-height: 1;
+  }
+</style>

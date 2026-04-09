@@ -8,24 +8,11 @@ const links = [
   { href: `${base}about`, label: 'About' },
 ];
 
-// Status: "alive" | "missing" | "dead"
-const status = "alive";
-
-const statusConfig = {
-  alive: { label: "lancelot is alive", color: "#3a7d44" },
-  missing: { label: "haven't heard from him in a few days, anyone?", color: "#c48820" },
-  dead: { label: "he's gone. rip.", color: "#c44040" },
-};
-
-const current = statusConfig[status];
 ---
 
 <nav>
   <div class="nav-inner container">
-    <div class="nav-left">
-      <a href={base} class="nav-logo">lancelot</a>
-      <span class="status-tag" style={`--status-color: ${current.color}`}>{current.label}</span>
-    </div>
+    <a href={base} class="nav-logo">lancelot</a>
     <ul class="nav-links">
       {links.map(link => (
         <li>
@@ -53,25 +40,10 @@ const current = statusConfig[status];
     align-items: center;
   }
 
-  .nav-left {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
   .nav-logo {
     font-weight: 600;
     font-size: 1.1rem;
     text-decoration: none;
-  }
-
-  .status-tag {
-    font-size: 0.7rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 10px;
-    background-color: var(--status-color);
-    color: white;
-    white-space: nowrap;
   }
 
   .nav-links {
@@ -95,11 +67,6 @@ const current = statusConfig[status];
     .nav-inner {
       flex-direction: column;
       gap: 0.75rem;
-    }
-
-    .nav-left {
-      flex-direction: column;
-      gap: 0.4rem;
     }
 
     .nav-links {
